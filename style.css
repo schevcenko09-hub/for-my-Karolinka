@@ -1,0 +1,686 @@
+
+/* ==========================================
+   KAROLINKA LOVE
+   PREMIUM PINK DESIGN
+========================================== */
+
+:root {
+    --pink: #ff3d9a;
+    --pink-light: #ff8bc7;
+    --pink-dark: #d91670;
+    --hot-pink: #ff1493;
+
+    --white: #ffffff;
+    --text: #fff5fb;
+    --muted: #e7b9d3;
+
+    --background: #10000b;
+    --background-2: #1d0014;
+
+    --glass: rgba(255, 255, 255, 0.07);
+    --border: rgba(255, 255, 255, 0.14);
+
+    --shadow:
+        0 25px 80px rgba(255, 20, 147, 0.25);
+}
+
+
+/* ==========================================
+   RESET
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family: "Comfortaa", sans-serif;
+
+    color: var(--text);
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            #51002e 0%,
+            var(--background) 42%,
+            #050003 100%
+        );
+
+    overflow-x: hidden;
+}
+
+
+/* ==========================================
+   BACKGROUND
+========================================== */
+
+.background {
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: -5;
+}
+
+.orb {
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(100px);
+
+    opacity: 0.35;
+}
+
+.orb-1 {
+    width: 500px;
+    height: 500px;
+
+    background: #ff008c;
+
+    top: -200px;
+    left: -150px;
+
+    animation: floatOrb 12s infinite alternate ease-in-out;
+}
+
+.orb-2 {
+    width: 400px;
+    height: 400px;
+
+    background: #a000ff;
+
+    right: -150px;
+    top: 30%;
+
+    animation: floatOrb 15s infinite alternate-reverse ease-in-out;
+}
+
+.orb-3 {
+    width: 350px;
+    height: 350px;
+
+    background: #ff006a;
+
+    bottom: -150px;
+    left: 30%;
+
+    animation: floatOrb 10s infinite alternate ease-in-out;
+}
+
+@keyframes floatOrb {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(100px, 80px);
+    }
+}
+
+
+/* ==========================================
+   NAVBAR
+========================================== */
+
+.navbar {
+    position: fixed;
+
+    top: 20px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: min(1100px, calc(100% - 30px));
+
+    padding: 15px 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border: 1px solid var(--border);
+
+    border-radius: 100px;
+
+    background: rgba(20, 0, 13, 0.65);
+
+    backdrop-filter: blur(20px);
+
+    box-shadow: 0 15px 50px rgba(0,0,0,.25);
+
+    z-index: 100;
+}
+
+.logo {
+    font-size: 25px;
+
+    color: #fff;
+
+    font-weight: 700;
+
+    text-shadow:
+        0 0 10px #ff3d9a,
+        0 0 30px #ff3d9a;
+}
+
+.navbar nav {
+    display: flex;
+
+    gap: 25px;
+}
+
+.navbar a {
+    color: #ffd7eb;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    transition: .3s;
+}
+
+.navbar a:hover {
+    color: white;
+
+    text-shadow:
+        0 0 15px var(--pink);
+}
+
+
+/* ==========================================
+   SECTIONS
+========================================== */
+
+.section {
+    position: relative;
+
+    width: min(1200px, calc(100% - 30px));
+
+    margin: auto;
+
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* ==========================================
+   HERO
+========================================== */
+
+.hero {
+    text-align: center;
+
+    padding-top: 100px;
+}
+
+.hero-content {
+    width: 100%;
+}
+
+.small-title {
+    color: var(--pink-light);
+
+    font-size: 14px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-family: "Great Vibes", cursive;
+
+    font-size: clamp(90px, 15vw, 190px);
+
+    line-height: .8;
+
+    color: white;
+
+    text-shadow:
+        0 0 15px #ff4fa3,
+        0 0 40px #ff1493,
+        0 0 100px #ff1493;
+
+    margin-bottom: 35px;
+}
+
+.hero h1 span {
+    font-family: sans-serif;
+
+    font-size: .3em;
+
+    vertical-align: top;
+
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.3);
+    }
+}
+
+.hero-subtitle {
+    max-width: 650px;
+
+    margin: auto;
+
+    color: var(--muted);
+
+    font-size: 17px;
+
+    line-height: 1.8;
+}
+
+
+/* ==========================================
+   HERO CARD
+========================================== */
+
+.hero-card {
+    position: relative;
+
+    width: min(600px, 100%);
+
+    margin: 60px auto;
+
+    padding: 55px 40px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(255,255,255,.15);
+
+    border-radius: 35px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.1),
+            rgba(255,0,140,.04)
+        );
+
+    backdrop-filter: blur(25px);
+
+    box-shadow: var(--shadow);
+
+    transition: transform .2s ease;
+}
+
+.card-glow {
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    background: #ff1493;
+
+    filter: blur(120px);
+
+    opacity: .18;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    pointer-events: none;
+}
+
+.heart-big {
+    position: relative;
+
+    font-size: 80px;
+
+    animation: heartbeat 1.4s infinite;
+
+    filter:
+        drop-shadow(0 0 20px #ff1493)
+        drop-shadow(0 0 50px #ff1493);
+}
+
+.hero-card h2 {
+    position: relative;
+
+    margin: 20px 0;
+
+    font-size: 35px;
+}
+
+.hero-card p {
+    position: relative;
+
+    color: var(--muted);
+
+    line-height: 1.8;
+
+    margin-bottom: 30px;
+}
+
+
+/* ==========================================
+   BUTTONS
+========================================== */
+
+.main-button,
+.love-button,
+.close-button {
+    border: none;
+
+    cursor: pointer;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-weight: 700;
+
+    padding: 16px 28px;
+
+    border-radius: 100px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff65b1,
+            #ff1493,
+            #d90072
+        );
+
+    box-shadow:
+        0 10px 35px rgba(255, 20, 147, .4),
+        inset 0 1px rgba(255,255,255,.4);
+
+    transition: .3s;
+}
+
+.main-button:hover,
+.love-button:hover,
+.close-button:hover {
+    transform: translateY(-5px) scale(1.03);
+
+    box-shadow:
+        0 15px 50px rgba(255, 20, 147, .65);
+}
+
+.scroll-hint {
+    color: #b86a91;
+
+    font-size: 12px;
+
+    animation: scrollBounce 2s infinite;
+}
+
+@keyframes scrollBounce {
+    50% {
+        transform: translateY(10px);
+    }
+}
+
+
+/* ==========================================
+   SECTION HEADING
+========================================== */
+
+.section-heading {
+    text-align: center;
+
+    margin-bottom: 50px;
+}
+
+.section-number {
+    color: var(--pink);
+
+    letter-spacing: 5px;
+
+    font-size: 12px;
+}
+
+.section-heading h2 {
+    font-size: clamp(35px, 6vw, 65px);
+
+    margin: 15px 0;
+}
+
+.section-heading p {
+    color: var(--muted);
+}
+
+
+/* ==========================================
+   LOVE CARDS
+========================================== */
+
+.love-section {
+    display: block;
+
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.love-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+}
+
+.love-card {
+    padding: 40px;
+
+    border-radius: 30px;
+
+    border: 1px solid var(--border);
+
+    background: var(--glass);
+
+    backdrop-filter: blur(20px);
+
+    transition: .4s;
+
+    box-shadow: 0 20px 60px rgba(0,0,0,.2);
+}
+
+.love-card:hover {
+    transform: translateY(-10px);
+
+    border-color: rgba(255, 61, 154, .5);
+
+    box-shadow:
+        0 20px 70px rgba(255, 20, 147, .18);
+}
+
+.icon {
+    font-size: 45px;
+
+    margin-bottom: 20px;
+}
+
+.love-card h3 {
+    font-size: 23px;
+
+    margin-bottom: 15px;
+}
+
+.love-card p {
+    color: var(--muted);
+
+    line-height: 1.8;
+
+    font-size: 14px;
+}
+
+
+/* ==========================================
+   QUOTE
+========================================== */
+
+.quote-section {
+    min-height: 80vh;
+}
+
+.quote-box {
+    width: min(850px, 100%);
+
+    padding: 70px 50px;
+
+    text-align: center;
+
+    border-radius: 40px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 20, 147, .15),
+            rgba(255,255,255,.03)
+        );
+
+    border: 1px solid rgba(255, 100, 180, .25);
+
+    box-shadow: var(--shadow);
+}
+
+.quote-heart {
+    font-size: 50px;
+
+    margin-bottom: 30px;
+}
+
+.quote {
+    font-family: "Great Vibes", cursive;
+
+    font-size: clamp(35px, 5vw, 60px);
+
+    line-height: 1.35;
+
+    color: #fff;
+}
+
+.quote-line {
+    width: 80px;
+    height: 2px;
+
+    margin: 35px auto;
+
+    background: var(--pink);
+}
+
+
+/* ==========================================
+   PROMISE
+========================================== */
+
+.promise-section {
+    min-height: 100vh;
+
+    text-align: center;
+}
+
+.promise-container {
+    max-width: 800px;
+}
+
+.promise-label {
+    color: var(--pink-light);
+
+    letter-spacing: 4px;
+
+    font-size: 12px;
+
+    margin-bottom: 30px;
+}
+
+.promise-container h2 {
+    font-size: clamp(40px, 7vw, 75px);
+
+    line-height: 1.1;
+
+    margin-bottom: 30px;
+}
+
+.promise-container h2 span {
+    color: var(--pink);
+
+    text-shadow:
+        0 0 30px rgba(255,20,147,.6);
+}
+
+.promise-container p {
+    color: var(--muted);
+
+    line-height: 1.9;
+
+    margin: 15px auto;
+
+    max-width: 650px;
+}
+
+.promise-list {
+    margin-top: 40px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+
+    text-align: left;
+}
+
+.promise-list div {
+    padding: 20px;
+
+    border-radius: 18px;
+
+    background: rgba(255,255,255,.05);
+
+    border: 1px solid var(--border);
+
+    color: #ffd8eb;
+}
+
+.promise-list span {
+    color: #ff4fa3;
+
+    margin-right: 8px;
+}
+
+
+/* ==========================================
+   GIANT HEART
+========================================== */
+
+.heart-section {
+    text-align: center;
+}
+
+.giant-heart {
+    max-width: 700px;
+}
+
+.heart-symbol {
+    font-size: clamp(100px, 20vw, 200px);
+
+    animation:
